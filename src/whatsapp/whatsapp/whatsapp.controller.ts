@@ -40,7 +40,7 @@ export class WhatsappController {
             const text = message.text.body;
 
             try {
-                const response = await this.whatsappService.sendMessageToWhatsapp(messageSender, "message from masry bot");
+                const response = await this.whatsappService.sendMessageToWhatsapp(messageSender, text);
                 return { message: response }; // Return success response
             } catch (error) {
                 throw new BadRequestException('Error in sending message');
